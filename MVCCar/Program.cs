@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using MVCCar;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<CarContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CarContext")
+    ?? throw new InvalidOperationException("Connection string 'CarContext' not found.")));
 
 var app = builder.Build();
 
