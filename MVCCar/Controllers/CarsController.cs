@@ -19,13 +19,13 @@ namespace MVCCar.Controllers
             _context = context;
         }
 
-         GET: Cars
+         //GET: Cars
         public async Task<IActionResult> Index()
         {
             return View(await _context.Car.ToListAsync());
         }
 
-         GET: Cars/Details/5
+         //GET: Cars/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,13 +43,13 @@ namespace MVCCar.Controllers
             return View(car);
         }
 
-         GET: Cars/Create
+         //GET: Cars/Create
         public IActionResult Create()
         {
             return View();
         }
 
-         POST: Cars/Create
+         //POST: Cars/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,7 +65,7 @@ namespace MVCCar.Controllers
             return View(car);
         }
 
-         GET: Cars/Edit/5
+         //GET: Cars/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,7 +81,7 @@ namespace MVCCar.Controllers
             return View(car);
         }
 
-         POST: Cars/Edit/5
+         //POST: Cars/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -116,7 +116,7 @@ namespace MVCCar.Controllers
             return View(car);
         }
 
-         GET: Cars/Delete/5
+         //GET: Cars/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +134,7 @@ namespace MVCCar.Controllers
             return View(car);
         }
 
-         POST: Cars/Delete/5
+         //POST: Cars/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
