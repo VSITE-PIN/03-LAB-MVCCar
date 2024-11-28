@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MVCCar.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<MVCCarContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MVCCarContext") ?? throw new InvalidOperationException("Connection string 'MVCCarContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
