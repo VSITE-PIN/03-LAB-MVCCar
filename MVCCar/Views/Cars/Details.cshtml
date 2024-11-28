@@ -1,0 +1,59 @@
+﻿﻿@model MVCCar.Models.Car
+
+@{
+    ViewData["Title"] = "Car Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Car</h4>
+    <hr />
+    <dl class="row">
+        <!-- Manufacturer (Prvi po redu) -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Manufacturer)
+        </dd>
+
+        <!-- Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <!-- Color -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <!-- Production Year -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductionYear)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductionYear)
+        </dd>
+
+        <!-- Price -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a href="@Url.Action("Edit", "Cars", new { id = Model.Id })" class="btn btn-warning">Edit</a> |
+    <a href="@Url.Action("Delete", "Cars", new { id = Model.Id })" class="btn btn-danger">Delete</a> |
+    <a href="@Url.Action("Index", "Cars")" class="btn btn-primary">Back to List</a>
+</div>
