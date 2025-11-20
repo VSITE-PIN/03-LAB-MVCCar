@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using MVCCar.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<MVCCarContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MVCCarContext")));
 
 var app = builder.Build();
 
