@@ -1,3 +1,4 @@
+
 namespace MVCCar.Models
 {
     public class ErrorViewModel
